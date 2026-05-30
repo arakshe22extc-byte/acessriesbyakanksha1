@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories by Akanksha | Premium Anti-Tarnish Jewellery</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY_HERE"); // Insert your EmailJS Public Key here
+        })();
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #fdfbf7; color: #333; }
+        header { background-color: #fff; padding: 25px; text-align: center; border-bottom: 2px solid #f5ebe0; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        h1 { margin: 0; color: #b5835a; font-size: 32px; letter-spacing: 1px; }
+        .tagline { margin: 5px 0 0; color: #8e9aaf; font-size: 14px; }
+        
+        .category-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 20px auto; max-width: 1200px; padding: 0 15px; }
+        .tab-btn { background-color: #fff; border: 1px solid #b5835a; color: #b5835a; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-weight: 600; transition: 0.3s; }
+        .tab-btn.active, .tab-btn:hover { background-color: #b5835a; color: #fff; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; flex-wrap: wrap; gap: 25px; }
+        
+        .products-section { flex: 2; min-width: 300px; }
+        .products-grid { display: none; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .products-grid.active { display: grid; }
+        
+        .product-card { background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.04); text-align: center; border: 1px solid #f5ebe0; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-card:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.08); }
+        .product-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; background-color: #f9f9f9; margin-bottom: 10px; }
+        
+        .product-card h3 { margin: 10px 0 5px; font-size: 16px; color: #4a4a4a; }
+        .product-card p { color: #b5835a; font-weight: bold; margin: 5px 0; font-size: 18px; }
+        .product-card span { font-size: 11px; color: #999; display: block; margin-bottom: 12px; background: #fefae0; padding: 3px; border-radius: 4px; }
+        
+        .swatch-container { display: flex; justify-content: center; gap: 8px; margin-bottom: 12px; }
+        .swatch { border: 1px solid #ddd; padding: 4px 10px; font-size: 12px; border-radius: 4px; cursor: pointer; background: #fff; }
+        .swatch.active { border-color: #b5835a; background: #e6ccb2; color: #333; font-weight: bold; }
+        
+        .color-dot { width: 20px; height: 20px; border-radius: 50%; display: inline-block; cursor: pointer; border: 2px solid #ddd; }
+        .color-dot.active { border-color: #333; transform: scale(1.1); }
+
+        .btn { background-color: #b5835a; color: white; border: none; padding: 10px 15px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold; transition: 0.2s; margin-top: auto; }
+        .btn:hover { background-color: #9c6f46; }
+        
+        .cart-checkout { flex: 1; min-width: 300px; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.04); border: 1px solid #f5ebe0; height: fit-content; }
+        .cart-items { border-bottom: 1px solid #f5ebe0; padding-bottom: 15px; margin-bottom: 15px; max-height: 200px; overflow-y: auto; }
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; margin-bottom: 5px; font-size: 13px; font-weight: bold; color: #555; }
+        .input-group input, .input-group textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 14px; }
+        
+        .policy { background: #fff0f0; color: #d90429; padding: 12px; border-radius: 6px; font-size: 12px; text-align: center; font-weight: bold; margin-bottom: 15px; border: 1px solid #ffccd5; }
+        .total { font-size: 20px; font-weight: bold; margin-bottom: 15px; display: flex; justify-content: space-between; color: #333; border-top: 1px solid #eee; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>accessories.byakanksha</h1>
+    <p class="tagline">✨ Premium Anti-Tarnish & Waterproof Collection ✨</p>
+</header>
+
+<div class="category-tabs">
+    <button class="tab-btn active" onclick="openCategory('chains')">Chains</button>
+    <button class="tab-btn" onclick="openCategory('rings')">Rings</button>
+    <button class="tab-btn" onclick="openCategory('earrings')">Earrings</button>
+    <button class="tab-btn" onclick="openCategory('bracelets')">Bracelets & Kadas</button>
+    <button class="tab-btn" onclick="openCategory('keychains')">Phone Charms & Keychains</button>
+    <button class="tab-btn" onclick="openCategory('others')">Exclusive Combos</button>
+</div>
+
+<div class="container">
+    <div class="products-section">
+        
+        <div id="chains" class="products-grid active">
+            <div class="product-card">
+                <img src="korean chain 299 - chain -6.jpg" alt="Korean Chain">
+                <h3>Korean Chain</h3><p>₹299</p><span>Anti-Tarnish</span><button class="btn" onclick="addToCart('Korean Chain', 299)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="pink heart 225 chain 9.jpg" alt="Pink Heart Chain">
+                <h3>Pink Heart Chain</h3><p>₹225</p><span>Anti-Tarnish</span><button class="btn" onclick="addToCart('Pink Heart Chain', 225)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="pink square diamond 280 chain -3.jpg" alt="Pink Square Diamond Chain">
+                <h3>Pink Square Diamond Chain</h3><p>₹280</p><span>Anti-Tarnish</span><button class="btn" onclick="addToCart('Pink Square Diamond Chain', 280)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="pretty small heart 249 chain-2.jpg" alt="Pretty Small Heart Chain">
+                <h3>Pretty Small Heart Chain</h3><p>₹249</p><span>Anti-Tarnish</span><button class="btn" onclick="addToCart('Pretty Small Heart Chain', 249)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="single diamond -219 -chain 7.jpg" alt="Single Diamond Chain">
+                <h3>Single Diamond Chain</h3><p>₹219</p><span>Anti-Tarnish</span><button class="btn" onclick="addToCart('Single Diamond Chain', 219)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="white flower 379 chain 5.jpg" alt="White Flower Chain">
+                <h3>White Flower Chain</h3><p>₹379</p><span>Anti-Tarnish Premium</span><button class="btn" onclick="addToCart('White Flower Chain', 379)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="golden circle with diamond 249 - chain 8.jpg" alt="Golden Circle with Diamond Chain">
+                <h3>Golden Circle with Diamond Chain</h3><p>₹249</p><span>Anti-Tarnish</span><button class="btn" onclick="addToCart('Golden Circle with Diamond Chain', 249)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="green chain diamond 280 chain -4.jpg" alt="Green Diamond Chain">
+                <h3>Green Diamond Chain</h3><p>₹280</p><span>Anti-Tarnish</span><button class="btn" onclick="addToCart('Green Diamond Chain', 280)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="heart necklace 219 chain -1.jpg" alt="Heart Necklace Chain">
+                <h3>Heart Necklace Chain</h3><p>₹219</p><span>Anti-Tarnish</span><button class="btn" onclick="addToCart('Heart Necklace Chain', 219)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div id="rings" class="products-grid">
+            <div class="product-card">
+                <img src="v ring golden - 1 price 180.jpg" alt="V Ring Golden">
+                <h3>V Ring Golden</h3><p>₹180</p><span>Anti-Tarnish</span><button class="btn" onclick="addToCart('V Ring Golden', 180)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="v ring silver 2 at 180 rupee.jpg" alt="V Ring Silver">
+                <h3>V Ring Silver</h3><p>₹180</p><span>Anti-Tarnish</span><button class="btn" onclick="addToCart('V Ring Silver', 180)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div id="earrings" class="products-grid">
+            <div class="product-card">
+                <img src="plain heart earrings 3 - 99 ruppes.jpg" alt="Plain Heart Earrings">
+                <h3>Plain Heart Earrings</h3><p>₹99</p><span>Beautiful Collection</span><button class="btn" onclick="addToCart('Plain Heart Earrings', 99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="pretty circle earrings - 4 at 99 ruppes.jpg" alt="Pretty Circle Earrings">
+                <h3>Pretty Circle Earrings</h3><p>₹99</p><span>Daily wear Hoops</span><button class="btn" onclick="addToCart('Pretty Circle Earrings', 99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="pretty heart earrings - 2 - 99 rupees.jpg" alt="Pretty Heart Earrings">
+                <h3>Pretty Heart Earrings</h3><p>₹99</p><span>Elegant Style</span><button class="btn" onclick="addToCart('Pretty Heart Earrings', 99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="pretty long circle hoops earrings -7 at 99.jpg" alt="Pretty Long Circle Hoops">
+                <h3>Pretty Long Circle Hoops</h3><p>₹99</p><span>Trendy Drop</span><button class="btn" onclick="addToCart('Pretty Long Circle Hoops', 99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="square earrings - 1 for 99 rupees.jpg" alt="Square Earrings">
+                <h3>Square Earrings</h3><p>₹99</p><span>Geometric Chic</span><button class="btn" onclick="addToCart('Square Earrings', 99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="star earrings - 8 at 99.jpg" alt="Star Earrings">
+                <h3>Star Earrings</h3><p>₹99</p><span>Dainty Star studs</span><button class="btn" onclick="addToCart('Star Earrings', 99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="big size circle hoops earrings -6 at 99.jpg" alt="Big Circle Hoops">
+                <h3>Big Circle Hoops</h3><p>₹99</p><span>Statement Hoops</span><button class="btn" onclick="addToCart('Big Circle Hoops', 99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="earrcup earrings 225 - 8.jpg" alt="Premium Earrcup Earrings">
+                <h3>Premium Earrcup Earrings</h3><p>₹225</p><span>Luxury Earcuff</span><button class="btn" onclick="addToCart('Premium Earrcup Earrings', 225)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="heart earrings 5 at 99 rupee.jpg" alt="Heart Earrings Style 5">
+                <h3>Heart Earrings (Style 5)</h3><p>₹99</p><span>Cute Design</span><button class="btn" onclick="addToCart('Heart Earrings (Style 5)', 99)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div id="bracelets" class="products-grid">
+            <div class="product-card">
+                <img src="plain adjustable kada 249 braclet -3.jpg" alt="Plain Adjustable Kada">
+                <h3>Plain Adjustable Kada</h3><p>₹249</p><span>Anti-Tarnish Sleek</span><button class="btn" onclick="addToCart('Plain Adjustable Kada', 249)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="white heart braaclet 300 - braclet 4.jpg" alt="White Heart Bracelet">
+                <h3>White Heart Bracelet</h3><p>₹300</p><span>Anti-Tarnish Premium</span><button class="btn" onclick="addToCart('White Heart Bracelet', 300)">Add to Cart</button>
+            </div>
+            
+            <div class="product-card">
+                <img src="flower braclet 349.jpg" alt="Adjustable Flower Bracelet">
+                <h3>Adjustable Flower Bracelet</h3><p>₹349</p><span>Anti-Tarnish Charm</span>
+                <div class="swatch-container">
+                    <button class="swatch active" onclick="selectVariant('flowerVariant', 'Small', this)">Small</button>
+                    <button class="swatch" onclick="selectVariant('flowerVariant', 'Regular', this)">Regular</button>
+                </div>
+                <input type="hidden" id="flowerVariant" value="Small">
+                <button class="btn" onclick="addWithCustomVariant('Adjustable Flower Bracelet', 349, 'flowerVariant')">Add to Cart</button>
+            </div>
+            
+            <div class="product-card">
+                <img src="butterfly golden braclet 300 braclet -2.jpg" alt="Butterfly Golden Bracelet">
+                <h3>Butterfly Golden Bracelet</h3><p>₹300</p><span>Anti-Tarnish Elegance</span><button class="btn" onclick="addToCart('Butterfly Golden Bracelet', 300)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="tulip braclet.jpg" alt="Tulip Charm Bracelet">
+                <h3>Tulip Charm Bracelet</h3><p>₹349</p><span>Anti-Tarnish Exclusive</span>
+                <div class="swatch-container" style="align-items: center;">
+                    <span class="color-dot active" style="background-color: #d62828;" onclick="selectVariant('tulipVariant', 'Red', this)"></span>
+                    <span class="color-dot" style="background-color: #a8dadc;" onclick="selectVariant('tulipVariant', 'Sky Blue', this)"></span>
+                </div>
+                <input type="hidden" id="tulipVariant" value="Red">
+                <button class="btn" onclick="addWithCustomVariant('Tulip Charm Bracelet', 349, 'tulipVariant')">Add to Cart</button>
+            </div>
+        </div>
+
+        <div id="keychains" class="products-grid">
+            <div class="product-card">
+                <img src="phone charms 200.jpg" alt="Aesthetic Phone Charm">
+                <h3>Aesthetic Phone Charm</h3><p>₹200</p><span>Handmade Straps</span>
+                <div class="swatch-container">
+                    <button class="swatch active" onclick="selectVariant('charmVariant', 'Pink', this)">Pink</button>
+                    <button class="swatch" onclick="selectVariant('charmVariant', 'Blue', this)">Blue</button>
+                </div>
+                <input type="hidden" id="charmVariant" value="Pink">
+                <button class="btn" onclick="addWithCustomVariant('Aesthetic Phone Charm', 200, 'charmVariant')">Add to Cart</button>
+            </div>
+            
+            <div class="product-card">
+                <img src="silver bell chain at 99 only.jpg" alt="Silver Bell Chain">
+                <h3>Silver Bell Chain</h3><p>₹99</p><span>Anti-Tarnish</span><button class="btn" onclick="addToCart('Silver Bell Chain', 99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="bronz bell keychain at 99.jpg" alt="Bronze Bell Keychain">
+                <h3>Bronze Bell Keychain</h3><p>₹99</p><span>Aesthetic Essential</span><button class="btn" onclick="addToCart('Bronze Bell Keychain', 99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="cherry keychain-1 at 200.jpg" alt="Premium Cherry Keychain">
+                <h3>Premium Cherry Keychain</h3><p>₹200</p><span>Cute Design</span><button class="btn" onclick="addToCart('Premium Cherry Keychain', 200)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="devil eye keychain 2 at 149.jpg" alt="Evil Eye Protection Keychain">
+                <h3>Evil Eye Protection Keychain</h3><p>₹149</p><span>Handmade Protection</span><button class="btn" onclick="addToCart('Evil Eye Protection Keychain', 149)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div id="others" class="products-grid">
+            <div class="product-card">
+                <img src="tulip braclet in red and green chain at 600.jpg" alt="Tulip Red Bracelet & Green Chain Combo">
+                <h3>Tulip Red Bracelet & Green Chain Combo</h3><p>₹600</p><span>Special Value Matching Set</span><button class="btn" onclick="addToCart('Tulip Red Bracelet & Green Chain Combo', 600)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="combo sky and chain 550.jpg" alt="Tulip Sky Blue Bracelet & Chain Combo">
+                <h3>Tulip Sky Blue Bracelet & Chain Combo</h3><p>₹550</p><span>Exclusive Value Set</span><button class="btn" onclick="addToCart('Tulip Sky Blue Bracelet & Chain Combo', 550)">Add to Cart</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cart-checkout">
+        <h2>Your Cart</h2>
+        <div id="cart-content" class="cart-items">Your cart is empty.</div>
+        <div class="total">
+            <span>Total:</span>
+            <span id="cart-total">₹0</span>
+        </div>
+        <p style="font-size: 12px; color: #666; margin-bottom: 15px;">* Delivery charges will be added later.</p>
+        <div class="policy">⚠️ NO REFUND, NO EXCHANGE AVAILABLE</div>
+
+        <form id="orderForm" onsubmit="placeOrder(event)">
+            <div class="input-group">
+                <label>Full Name *</label>
+                <input type="text" id="custName" required placeholder="Enter your full name">
+            </div>
+            <div class="input-group">
+                <label>WhatsApp Number *</label>
+                <input type="tel" id="custPhone" required placeholder="10-digit mobile number">
+            </div>
+            <div class="input-group">
+                <label>Proper Delivery Address *</label>
+                <textarea id="custAddress" rows="3" required placeholder="House No, Street, Area, City, State, Pincode"></textarea>
+            </div>
+            <div class="input-group">
+                <label>Payment Method</label>
+                <input type="text" value="Cash on Delivery (COD) Only" disabled style="background: #f1f1f1; font-weight: bold; color: #555;">
+            </div>
+            <button type="submit" class="btn" style="background-color: #28a745; font-size: 16px;">Place Order</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function openCategory(categoryName) {
+        const grids = document.querySelectorAll('.products-grid');
+        grids.forEach(grid => grid.classList.remove('active'));
+        const tabs = document.querySelectorAll('.tab-btn');
+        tabs.forEach(tab => tab.classList.remove('active'));
+        document.getElementById(categoryName).classList.add('active');
+        if (window.event && window.event.currentTarget) {
+            window.event.currentTarget.classList.add('active');
+        }
+    }
+
+    let cart = [];
+    let total = 0;
+
+    function addToCart(name, price) {
+        cart.push({name: name, price: price});
+        updateCartDisplay();
+    }
+
+    function selectVariant(hiddenInputId, variantValue, element) {
+        document.getElementById(hiddenInputId).value = variantValue;
+        if(element) {
+            let siblings = element.parentNode.children;
+            for(let sibling of siblings) { sibling.classList.remove('active'); }
+            element.classList.add('active');
+        }
+    }
+
+    function addWithCustomVariant(name, price, hiddenInputId) {
+        const variant = document.getElementById(hiddenInputId).value;
+        const completeName = `${name} (${variant})`;
+        cart.push({name: completeName, price: price});
+        updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+        const cartContent = document.getElementById('cart-content');
+        const cartTotal = document.getElementById('cart-total');
+        if(cart.length === 0) {
+            cartContent.innerHTML = "Your cart is empty.";
+            cartTotal.innerText = "₹0";
+            return;
+        }
+        cartContent.innerHTML = cart.map(item => `<div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:14px;"><span>• ${item.name}</span> <span>₹${item.price}</span></div>`).join('');
+        total = cart.reduce((sum, item) => sum + item.price, 0);
+        cartTotal.innerText = "₹" + total;
+    }
+
+    function placeOrder(event) {
+        event.preventDefault();
+        if(cart.length === 0) { alert("Please add products to your cart first!"); return; }
+        const name = document.getElementById('custName').value;
+        const phone = document.getElementById('custPhone').value;
+        const address = document.getElementById('custAddress').value;
+        let productDetails = cart.map(item => `${item.name} (₹${item.price})`).join(', ');
+
+        const templateParams = {
+            to_email: 'akanksharakshe13@gmail.com',
+            customer_name: name,
+            customer_phone: phone,
+            customer_address: address,
+            ordered_items: productDetails,
+            total_amount: '₹' + total,
+            payment_mode: 'Cash on Delivery (COD)'
+        };
+
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+            .then(function(response) {
+               alert(`🎉 Order Successful!\n\n--- RECEIPT ---\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nItems Ordered:\n${productDetails.replace(/, /g, '\n')}\n\nTotal Amount: ₹${total} (COD)\n\n* No Refund / No Exchange. \nThank you for shopping with accessories.byakanksha!`);
+               cart = [];
+               document.getElementById('orderForm').reset();
+               updateCartDisplay();
+            }, function(error) {
+                alert("Something went wrong. Please try again.");
+                console.log('FAILED...', error);
+            });
+    }
+</script>
+
+</body>
+</html>
